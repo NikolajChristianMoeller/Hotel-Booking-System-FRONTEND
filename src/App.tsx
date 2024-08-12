@@ -1,10 +1,14 @@
+import { Hotel } from "@mui/icons-material";
 import { CssBaseline } from "@mui/material";
-import NavBar from "./components/NavBar.tsx";
 import { Route, Routes } from "react-router-dom";
-import Home from "./containers/Home.tsx";
-import FallBack from "./containers/FallBack.tsx";
 import { SnackbarProvider } from "notistack";
-import {Hotel, Room} from "@mui/icons-material";
+import FallBack from "./containers/FallBack.tsx";
+import NavBar from "./components/NavBar.tsx";
+import Home from "./containers/Home.tsx";
+import Guest from "./containers/Guest.tsx";
+import Reservation from "./containers/Reservation.tsx";
+import Room from "./containers/Room.tsx";
+
 
 function App() {
     return (
