@@ -5,6 +5,8 @@ type THotel = {
     city: string;
     zip: string;
     country: string;
+    created: string;
+    updated: string;
 };
 
 export type { THotel };

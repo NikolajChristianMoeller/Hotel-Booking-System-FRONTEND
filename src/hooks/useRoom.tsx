@@ -23,6 +23,7 @@ export default function useRoom() {
     const createRoom = async (room: TRoom) => {
         try {
             const res = await Api.post("rooms", room);
+            console.log(res); // Log the response to see its content
             setRoom((prev) => [...prev, res]);
         }
         catch (e) {

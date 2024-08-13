@@ -1,8 +1,8 @@
-import useHotel from "../hooks/useHotel.tsx";
-import {Button, Paper} from "@mui/material";
-import {DataGrid} from "@mui/x-data-grid";
-import {useState} from "react";
+import { Button, Paper } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { useState } from "react";
 import PostHotelDialog from "../components/hotel/PostHotelDialog.tsx";
+import useHotel from "../hooks/useHotel.tsx";
 
 export default function Hotel() {
     const {hotel, createHotel} = useHotel();
@@ -23,14 +23,18 @@ export default function Hotel() {
         city: p.city,
         zip: p.zip,
         country: p.country,
+        created: p.created,
+        updated: p.updated,
     }))
 
     const columns = [
-        {field: "name", headerName: "name", flex: 1},
-        {field: "street", headerName: "street", flex: 2},
-        {field: "city", headerName: "city", flex: 3},
-        {field: "zip", headerName: "zip", flex: 4},
-        {field: "country", headerName: "country", flex: 5},
+        {field: "name", headerName: "Name", flex: 1},
+        {field: "street", headerName: "Street", flex: 2},
+        {field: "city", headerName: "City", flex: 3},
+        {field: "zip", headerName: "Zip", flex: 4},
+        {field: "country", headerName: "Country", flex: 5},
+        {field: "created", headerName: "Created", flex: 6},
+        {field: "updated", headerName: "Updated", flex: 7},
     ]
 
     return (

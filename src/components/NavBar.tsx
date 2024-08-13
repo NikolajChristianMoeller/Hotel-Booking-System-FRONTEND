@@ -9,9 +9,10 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
-import SportsHandballIcon from "@mui/icons-material/SportsHandball";
-import SportsScoreIcon from "@mui/icons-material/SportsScore";
-import GroupIcon from "@mui/icons-material/Group";
+import HotelIcon from "@mui/icons-material/Hotel";
+import HailIcon from '@mui/icons-material/Hail';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import ApartmentIcon from '@mui/icons-material/Apartment';
 
 /**
  * Navbar component.
@@ -45,16 +46,16 @@ export default function Navbar() {
                         component="span"
                         sx={{ color: theme.palette.primary.main }}
                     >
-                        A
+                        Q
                     </Box>
-                    thletics
+                    uick
                     <Box
                         component="span"
                         sx={{ color: theme.palette.primary.main }}
                     >
-                        M
+                        B
                     </Box>
-                    eet
+                    ook
                 </Typography>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Tooltip title="Home">
@@ -72,7 +73,7 @@ export default function Navbar() {
                             to="/hotels"
                             sx={{ color: theme.palette.text.primary }}
                         >
-                            <HomeIcon />
+                            <ApartmentIcon />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Rooms">
@@ -81,7 +82,7 @@ export default function Navbar() {
                             to="/rooms"
                             sx={{ color: theme.palette.text.primary }}
                         >
-                            <SportsHandballIcon />
+                            <HotelIcon />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Guests">
@@ -90,7 +91,7 @@ export default function Navbar() {
                             to="/guests"
                             sx={{ color: theme.palette.text.primary }}
                         >
-                            <GroupIcon />
+                            <HailIcon />
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Reservations">
@@ -99,7 +100,7 @@ export default function Navbar() {
                             to="/reservations"
                             sx={{ color: theme.palette.text.primary }}
                         >
-                            <SportsScoreIcon />
+                            <LibraryBooksIcon />
                         </IconButton>
                     </Tooltip>
                 </Box>

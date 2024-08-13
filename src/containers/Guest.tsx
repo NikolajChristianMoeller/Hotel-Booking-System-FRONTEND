@@ -1,8 +1,9 @@
-import useGuest from "../hooks/useGuest.tsx";
-import {Button, Paper} from "@mui/material";
-import {DataGrid} from "@mui/x-data-grid";
-import {useState} from "react";
+import { Button, Paper } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import { useState } from "react";
 import PostGuestDialog from "../components/guest/PostGuestDialog.tsx";
+import useGuest from "../hooks/useGuest.tsx";
+
 
 export default function Guest() {
     const {guest, createGuest} = useGuest();
@@ -22,6 +23,8 @@ export default function Guest() {
         fullName: p.fullName,
         email: p.email,
         phoneNumber: p.phoneNumber,
+        created: p.created,
+        updated: p.updated,
     }))
 
     const columns = [
@@ -29,6 +32,8 @@ export default function Guest() {
         {field: "fullName", headerName: "Full Name", flex: 2},
         {field: "email", headerName: "Email", flex: 3},
         {field: "phoneNumber", headerName: "Phone Number", flex: 4},
+        {field: "created", headerName: "Created", flex: 5},
+        {field: "updated", headerName: "Updated", flex: 6},
     ]
 
     return (

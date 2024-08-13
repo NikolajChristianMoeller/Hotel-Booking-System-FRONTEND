@@ -15,6 +15,8 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
     const [city, setCity] = useState<string>("");
     const [zip, setZip] = useState<string>("");
     const [country, setCountry] = useState<string>("");
+    const [created, setCreated] = useState<string>("");
+    const [updated, setUpdated] = useState<string>("");
 
     const handleCreate = () => {
 
@@ -24,7 +26,9 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
             street: street,
             city: city,
             zip: zip,
-            country: country
+            country: country,
+            created: created,
+            updated: updated
         }
         createHotel(newHotel);
         handleClose();
@@ -88,6 +92,25 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                                 onChange={(e) => setCountry(e.target.value)}
                             />
                         </Grid>
+
+                        <Grid item xs={12}>
+                            <TextField
+                                label="Created"
+                                variant="outlined"
+                                fullWidth
+                                onChange={(e) => setCreated(e.target.value)}
+                            />
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <TextField
+                                label="Updated"
+                                variant="outlined"
+                                fullWidth
+                                onChange={(e) => setUpdated(e.target.value)}
+                            />
+                        </Grid>
+
                     </Grid>
 
                 </DialogContent>
