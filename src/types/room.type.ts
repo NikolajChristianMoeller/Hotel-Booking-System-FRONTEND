@@ -1,4 +1,4 @@
-type TRoom = {
+export type TRoom = {
     id: number;
     roomNumber: string;
     numberOfBeds: number;
@@ -6,5 +6,3 @@ type TRoom = {
     created: string;
     updated: string;
 };
-
-export type { TRoom };

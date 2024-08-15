@@ -40,7 +40,7 @@ export default function Guest() {
         <>
             <Paper>
                 <Button onClick={handleOpenModal}>
-                    Create Guest
+                    Create new Guest
                 </Button>
                 <DataGrid columns={columns} rows={rows}/>
             </Paper>

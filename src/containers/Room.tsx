@@ -37,7 +37,7 @@ export default function Room() {
         <>
             <Paper>
                 <Button onClick={handleOpenModal}>
-                    Create Room
+                    Create new Room
                 </Button>
                 <DataGrid columns={columns} rows={rows}/>
             </Paper>

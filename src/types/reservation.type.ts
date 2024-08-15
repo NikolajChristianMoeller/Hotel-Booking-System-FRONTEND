@@ -1,4 +1,4 @@
-type TReservation = {
+export type TReservation = {
     id: number;
     reservationDate: string;
     checkInDate: string;
@@ -6,5 +6,3 @@ type TReservation = {
     created: string;
     updated: string;
 };
-
-export type { TReservation };

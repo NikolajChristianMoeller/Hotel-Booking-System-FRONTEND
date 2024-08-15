@@ -1,4 +1,4 @@
-type TGuest = {
+export type TGuest = {
     id: number;
     userName: string;
     fullName: string;
@@ -7,5 +7,3 @@ type TGuest = {
     created: string;
     updated: string;
 }
-
-export type { TGuest };

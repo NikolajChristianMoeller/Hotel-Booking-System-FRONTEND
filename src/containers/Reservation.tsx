@@ -37,7 +37,7 @@ export default function Reservation() {
         <>
             <Paper>
                 <Button onClick={handleOpenModal}>
-                    Create Reservation
+                    Create new Reservation
                 </Button>
                 <DataGrid columns={columns} rows={rows}/>
             </Paper>

@@ -1,41 +1,56 @@
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, TextField} from "@mui/material";
-import {TCountry, THotel} from "../../types/hotel.type.ts";
-import {useState} from "react";
+import { useState, useEffect } from "react";
+import {TCountry, THotelUpdate} from "../../types/hotel.type.ts";
+import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, MenuItem, TextField} from "@mui/material";
 
-type TPostHotelDialogProps = {
-    open: boolean,
-    handleClose: () => void
-    createHotel: (hotel: THotel ) => void
-    countriesArray: TCountry[]
+type PutHotelDialogProps = {
+    open: boolean;
+    handleClose: () => void;
+    countriesArray: TCountry[];
+    selectedHotel: THotelUpdate;
+    updateHotel: (updatedHotel: THotelUpdate, id: number) => void;
 
-}
+};
 
-export default function PostHotelDialog({open, handleClose, createHotel}: TPostHotelDialogProps) {
+export default function PutHotelDialog({
+                                  open,
+                                  handleClose,
+                                  updateHotel,
+                                  countriesArray,
+                                  selectedHotel
+                                }: PutHotelDialogProps) {
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [zip, setZip] = useState("");
+    const [country, setCountry] = useState<TCountry>("DENMARK");
+    const [created, setCreated] = useState("");
+    const [updated, setUpdated] = useState("");
 
-    const [name, setName] = useState<string>("");
-    const [address, setAddress] = useState<string>("");
-    const [city, setCity] = useState<string>("");
-    const [zip, setZip] = useState<string>("");
-    const [country, setCountry] = useState<string>("");
-    const [created, setCreated] = useState<string>("");
-    const [updated, setUpdated] = useState<string>("");
-
-    const handleCreate = () => {
-
-        const newHotel: THotel = {
-            id: 0,
-            name: name,
-            address: address,
-            city: city,
-            zip: zip,
-            country: country,
-            created: created,
-            updated: updated,
-            //rooms: []
+    useEffect(() => {
+        if (selectedHotel) {
+            setName(selectedHotel.name);
+            setAddress(selectedHotel.address);
+            setCity(selectedHotel.city);
+            setZip(selectedHotel.zip);
+            setCountry(selectedHotel.country);
+            setCreated(selectedHotel.created);
+            setUpdated(selectedHotel.updated);
         }
-        createHotel(newHotel);
+    }, [selectedHotel]);
+
+    const handleUpdate = () => {
+        const newHotel: THotelUpdate = {
+            name,
+            address,
+            city,
+            zip,
+            country,
+            created,
+            updated,
+        };
+        updateHotel(newHotel, selectedHotel.id as number);
         handleClose();
-    }
+    };
 
     return (
         <>
@@ -44,7 +59,7 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                 onClose={handleClose}
                 fullWidth
             >
-                <DialogTitle>Create new Hotel</DialogTitle>
+                <DialogTitle>Update Hotel</DialogTitle>
                 <br />
                 <DialogContent>
 
@@ -92,8 +107,19 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                                 label="Country"
                                 variant="outlined"
                                 fullWidth
-                                onChange={(e) => setCountry(e.target.value)}
-                            />
+                                onChange={(e) => setCountry(e.target.value as TCountry)}
+                            >
+                                {countriesArray.map((country) => (
+                                    <MenuItem value={country}>{country}</MenuItem>
+                                ))}
+                            </TextField>
+                            //Hvorfor SKAL jeg udfylde Textfield sluttag heroppe?^
+                            //Hvorfor SKAL jeg udfylde Textfield her?
+                            //Hvorfor SKAL jeg udfylde Textfield her?
+                            //Hvorfor SKAL jeg udfylde Textfield her?
+                            //Hvorfor SKAL jeg udfylde Textfield her?
+                            //Hvorfor SKAL jeg udfylde Textfield her?
+
                         </Grid>
 
                         <Grid item xs={12}>
@@ -115,11 +141,11 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                         </Grid>
 
                     </Grid>
-
                 </DialogContent>
+
                 <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleCreate}>Create</Button>
+                    <Button onClick={handleUpdate}>Update</Button>
                 </DialogActions>
             </Dialog>
         </>
