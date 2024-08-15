@@ -11,7 +11,7 @@ type TPostHotelDialogProps = {
 export default function PostHotelDialog({open, handleClose, createHotel}: TPostHotelDialogProps) {
 
     const [name, setName] = useState<string>("");
-    const [street, setStreet] = useState<string>("");
+    const [address, setAddress] = useState<string>("");
     const [city, setCity] = useState<string>("");
     const [zip, setZip] = useState<string>("");
     const [country, setCountry] = useState<string>("");
@@ -23,12 +23,13 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
         const newHotel: THotel = {
             id: 0,
             name: name,
-            street: street,
+            address: address,
             city: city,
             zip: zip,
             country: country,
             created: created,
-            updated: updated
+            updated: updated,
+            rooms: []
         }
         createHotel(newHotel);
         handleClose();
@@ -61,7 +62,7 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                                 label="Street"
                                 variant="outlined"
                                 fullWidth
-                                onChange={(e) => setStreet(e.target.value)}
+                                onChange={(e) => setAddress(e.target.value)}
                             />
                         </Grid>
 

@@ -19,22 +19,15 @@ export default function Hotel() {
     const rows = hotel.map((p) =>({
         id: p.id,
         name: p.name,
-        street: p.street,
-        city: p.city,
-        zip: p.zip,
-        country: p.country,
-        created: p.created,
-        updated: p.updated,
+        address: p.address,
+        rooms: p.rooms,
     }))
 
     const columns = [
-        {field: "name", headerName: "Name", flex: 1},
-        {field: "street", headerName: "Street", flex: 2},
-        {field: "city", headerName: "City", flex: 3},
-        {field: "zip", headerName: "Zip", flex: 4},
-        {field: "country", headerName: "Country", flex: 5},
-        {field: "created", headerName: "Created", flex: 6},
-        {field: "updated", headerName: "Updated", flex: 7},
+        {field: "id", headerName: "ID", flex: 1},
+        {field: "name", headerName: "Name", flex: 2},
+        {field: "address", headerName: "Address", flex: 3},
+        {field: "room", headerName: "Room", flex: 4},
     ]
 
     return (
