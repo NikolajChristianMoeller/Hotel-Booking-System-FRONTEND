@@ -1,12 +1,11 @@
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, TextField} from "@mui/material";
-import {TCountry, THotel} from "../../types/hotel.type.ts";
+import {THotelCreateAndUpdate} from "../../types/hotel.type.ts";
 import {useState} from "react";
 
 type TPostHotelDialogProps = {
     open: boolean,
     handleClose: () => void
-    createHotel: (hotel: THotel ) => void
-    countriesArray: TCountry[]
+    createHotel: (hotel: THotelCreateAndUpdate ) => void
 
 }
 
@@ -17,21 +16,16 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
     const [city, setCity] = useState<string>("");
     const [zip, setZip] = useState<string>("");
     const [country, setCountry] = useState<string>("");
-    const [created, setCreated] = useState<string>("");
-    const [updated, setUpdated] = useState<string>("");
 
     const handleCreate = () => {
 
-        const newHotel: THotel = {
+        const newHotel: THotelCreateAndUpdate = {
             id: 0,
             name: name,
             address: address,
             city: city,
             zip: zip,
             country: country,
-            created: created,
-            updated: updated,
-            //rooms: []
         }
         createHotel(newHotel);
         handleClose();
@@ -93,24 +87,6 @@ export default function PostHotelDialog({open, handleClose, createHotel}: TPostH
                                 variant="outlined"
                                 fullWidth
                                 onChange={(e) => setCountry(e.target.value)}
-                            />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Created"
-                                variant="outlined"
-                                fullWidth
-                                onChange={(e) => setCreated(e.target.value)}
-                            />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Updated"
-                                variant="outlined"
-                                fullWidth
-                                onChange={(e) => setUpdated(e.target.value)}
                             />
                         </Grid>
 
