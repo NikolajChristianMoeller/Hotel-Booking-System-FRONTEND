@@ -4,7 +4,7 @@ import { Button, Typography, Box, Grid, Paper } from "@mui/material";
 /**
  * FallBack component.
  */
-function FallBack() {
+export default function FallBack() {
     return (
         <>
             <Paper
@@ -60,5 +60,3 @@ function FallBack() {
         </>
     );
 }
-
-export default FallBack;

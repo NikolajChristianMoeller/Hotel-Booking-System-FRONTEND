@@ -3,7 +3,7 @@ import { Paper } from "@mui/material";
 /**
  * Home component.
  */
-function Home() {
+export default function Home() {
 
     return (
         <>
@@ -22,5 +22,3 @@ function Home() {
         </>
     );
 }
-
-export default Home;

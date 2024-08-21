@@ -9,7 +9,7 @@ import Room from "./containers/Room.tsx";
 import Guest from "./containers/Guest.tsx";
 import Reservation from "./containers/Reservation.tsx";
 
-function App() {
+export default function App() {
     return (
         <>
             <SnackbarProvider maxSnack={3}>
@@ -45,5 +45,3 @@ function App() {
         </>
     );
 }
-
-export default App;

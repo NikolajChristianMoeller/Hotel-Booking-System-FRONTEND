@@ -1,7 +1,7 @@
 /**
  * This class is used to make API calls to the backend server.
  */
-class Api {
+export default class Api {
     private static readonly BASE_URL = "http://localhost:8080/";
 
     /**
@@ -75,5 +75,3 @@ class Api {
         return response.json();
     }
 }
-
-export default Api;
