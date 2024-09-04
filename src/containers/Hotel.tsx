@@ -11,7 +11,7 @@ export default function Hotel() {
     const [openPost, setOpenPost] = useState(false);
     const [openPut, setOpenPut] = useState(false);
 
-    const defaultParticipant: THotel = {
+    const defaultHotel: THotel = {
         id: 0,
         name: "",
         address: "",
@@ -23,7 +23,7 @@ export default function Hotel() {
         numberOfRooms: 0
     }
 
-    const [selectedHotel, setSelectedHotel] = useState<THotel>(defaultParticipant)
+    const [selectedHotel, setSelectedHotel] = useState<THotel>(defaultHotel)
 
     const handleOpenPost = () => {
         setOpenPost(true)

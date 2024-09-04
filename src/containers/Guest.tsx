@@ -4,7 +4,6 @@ import { useState } from "react";
 import PostGuestDialog from "../components/guest/PostGuestDialog.tsx";
 import useGuest from "../hooks/useGuest.tsx";
 
-
 export default function Guest() {
     const {guest, createGuest} = useGuest();
     const [open, setOpen] = useState<boolean>(false);
